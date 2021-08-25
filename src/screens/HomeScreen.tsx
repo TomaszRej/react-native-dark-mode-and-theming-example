@@ -3,8 +3,8 @@ import {Button} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
 import ScreenWrapper from '../components/screenWrapper/ScreenWrapper';
 import Text from '../components/text/Text';
-import {RootStackParamList} from '../../App';
-import {SCREENS} from '../../App';
+import {RootStackParamList} from '../navigation/RootNavigation';
+import {SCREENS} from '../navigation/RootNavigation';
 import {StackNavigationProp} from '@react-navigation/stack';
 
 type NavigationScreenProp = StackNavigationProp<
