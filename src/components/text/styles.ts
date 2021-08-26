@@ -5,7 +5,7 @@ export const createStyles = (theme: ITheme) => {
   return StyleSheet.create({
     text: {
       color: theme.colors.text,
-      fontSize: theme.fontSize.medium,
+      fontSize: theme.fontSize.xl,
     },
   });
 };

@@ -1,14 +1,28 @@
 import React, {FC} from 'react';
-import {View, ViewProps} from 'react-native';
+import {SafeAreaView, StatusBar} from 'react-native';
 import {useCreateStyles} from '../../hooks/useCreateStyles';
 import {createStyles} from './styles';
+import {ThemeMode, useTheme} from '../../themes/theme';
 
-interface IProps extends ViewProps {}
+interface IProps {
+  children: React.ReactNode;
+}
 
 const ScreenWrapper: FC<IProps> = ({children}) => {
+  const {theme} = useTheme();
   const styles = useCreateStyles(createStyles);
 
-  return <View style={styles.wrapper}>{children}</View>;
+  return (
+    <SafeAreaView style={styles.wrapper}>
+      <StatusBar
+        backgroundColor="blue"
+        barStyle={
+          theme.mode === ThemeMode.light ? 'dark-content' : 'light-content'
+        }
+      />
+      {children}
+    </SafeAreaView>
+  );
 };
 
 export default ScreenWrapper;
